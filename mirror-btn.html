@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn {
+            position: relative;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        #video {
+            width: 200px;
+            height: 80px;
+            filter: blur(10px);
+            object-fit: cover;
+        }
+
+        #text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script>
+        navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: false
+        }).then((stream) => {
+            const video = document.getElementById('video');
+            video.srcObject = stream
+            video.play();
+        })
+    </script>
+</head>
+<body>
+    <button id="btn">
+        <video id="video"></video>
+        <span id="text">按钮文字</span>
+    </button>
+</body>
+</html>
