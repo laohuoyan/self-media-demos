@@ -18,7 +18,7 @@ export default function Home() {
   const renderStr = ` ${html} <style>${css}</style> `;
 
   return (
-    <main className="container flex flex-col p-10 h-full bg-slate-800">
+    <main className="flex flex-col p-10 h-full bg-slate-800">
       <div className="flex gap-4">
         {/* HTML 编辑器 */}
         <div className="flex-1">
